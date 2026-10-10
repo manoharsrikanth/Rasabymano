@@ -21,6 +21,12 @@ img{border-radius:var(--photo-radius)}
 .thumbnails button,.thumbnails img{border-radius:8px}
 .photo-dialog img{width:auto;height:auto;max-width:100%;max-height:75vh;margin-inline:auto}
 @media(max-width:650px){:root{--photo-radius:14px}.photo-dialog img{max-height:70vh}}
+
+/* A quiet lift from the cream background. */
+:root{--photo-shadow:0 5px 12px rgba(56,30,24,.07),0 18px 34px -18px rgba(56,30,24,.24)}
+img,.hero-photo,.home-image,.gallery-stage{box-shadow:var(--photo-shadow)}
+.hero-photo>img,.home-image>img,.gallery-stage>img{box-shadow:none}
+.thumbnails img{box-shadow:0 3px 6px rgba(56,30,24,.10)}
 </style>
 </head>
 <body>
