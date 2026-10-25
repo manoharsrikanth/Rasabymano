@@ -11,3 +11,40 @@
 .hero-grid>*,.article-grid>*,.split>*,.bio-grid>*,.footer-grid>*,.records>*,.photo-feature>*,.section-head>*{min-width:0}.article{width:100%;min-width:0}.diagram-window{width:100%;max-width:100%;overflow-x:auto}.image-caption>a{overflow-wrap:anywhere}
 .spaces{--wine:#7d3d2c;--teal:#3c5f4a}
 @media(max-width:374px){.hero h1{font-size:50px}.page-head h1{font-size:48px}.wrap{padding-left:20px;padding-right:20px}}
+
+/* Homepage: a continuous product story, with fewer annotations. */
+.home .hero{padding-top:54px;padding-bottom:70px}
+.home .hero-identity{margin-bottom:32px;color:var(--ink)}
+.home .hero-identity p{font-size:21px;font-weight:500;line-height:1.4;margin:0 0 5px;letter-spacing:-.025em}
+.home .hero-identity .identity-degree{font-size:18px;color:var(--teal);font-weight:400}
+.home .identity-degree span{margin:0 8px}
+.home .hero h1{margin-top:0}
+.home .hero .lead{font-size:19px;line-height:1.65}
+.home .hero-links{margin:28px 0 0}
+.home .button,.home .text-link{font-size:16px}
+.home .eyebrow{font:500 15px/1.5 var(--sans);letter-spacing:0;text-transform:none;margin-bottom:22px}
+.home .hero-object{min-height:460px;padding-top:15px}
+.home .hero-object .image-caption{font:12px/1.6 var(--sans);flex-wrap:wrap;gap:5px 20px}
+.home .hero-object .image-caption a{text-decoration:underline;text-underline-offset:4px}
+.home .section{padding:112px 0}
+.home .section-head p,.home .story-feature p{font-size:18px;line-height:1.75}
+.home .patent-plate figcaption{font:14px/1.6 var(--sans)}
+.home .work-card .meta{display:none}
+.home .work-card h3{margin-top:24px;font-size:38px}
+.home .work-card p,.home .about-preview p{font-size:17px;line-height:1.75}
+.home .photo-composition figcaption{font:14px/1.6 var(--sans)}
+.home .statement{padding:94px 0}
+.home .statement blockquote{font-size:48px}
+.home .elsewhere p,.home .footer-grid p{font-size:16px}
+.home .footer-list{font-size:15px;gap:12px}
+.home .footer-bottom{font:12px/1.6 var(--sans)}
+.camera-motion{padding:95px 0 84px;background:var(--white);scroll-margin-top:86px}
+.motion-intro{text-align:center;max-width:760px;margin:0 auto 46px}
+.motion-intro h2{font-size:clamp(48px,5.6vw,80px);color:var(--wine)}
+.motion-intro p{font-size:21px;line-height:1.5;color:var(--muted);margin:26px 0 0}
+.motion-film{position:relative;max-width:1120px;margin:auto;background:var(--night);overflow:hidden;border-radius:8px}
+.motion-film video{display:block;width:100%;aspect-ratio:1280/658;object-fit:contain}
+.film-toggle{display:flex;align-items:center;gap:12px;position:absolute;bottom:20px;right:20px;border:1px solid #e8ddcb;background:#f4efe5ed;border-radius:24px;color:var(--ink);font-size:14px;padding:10px 17px;min-height:44px}
+.film-description{text-align:center;font-size:12px;color:var(--muted);margin:18px 0 0}
+@media(max-width:1100px) and (min-width:761px){.home .hero-identity p{font-size:18px}.home .hero-identity .identity-degree{font-size:16px}}
+@media(max-width:760px){.home .hero{padding:36px 0 54px}.home .hero-identity{margin-bottom:25px}.home .hero-identity p{font-size:19px}.home .hero-identity .identity-degree{font-size:17px}.home .hero h1{margin-top:0}.home .hero .lead{font-size:18px}.home .hero-object{min-height:0;padding-top:0;margin-top:20px}.home .hero-object .image-caption{font-size:12px}.home .eyebrow{font-size:14px}.home .section{padding:66px 0}.home .section-head p,.home .story-feature p{font-size:17px}.home .work-card h3{font-size:32px}.home .work-card p,.home .about-preview p{font-size:16px}.home .about-preview{grid-template-columns:1fr}.home .about-preview>img{width:120px}.home .about-preview>div:last-child{grid-column:auto}.home .statement{padding:64px 0}.home .statement blockquote{font-size:35px}.home .footer-bottom{font-size:12px}.camera-motion{padding:62px 0 50px;scroll-margin-top:72px}.motion-intro{margin-bottom:30px}.motion-intro p{font-size:18px;margin-top:22px}.film-toggle{bottom:12px;right:12px;font-size:12px;padding:8px 12px}.film-description{font-size:12px;max-width:280px;margin:15px auto 0}.home .patent-plate figcaption{font-size:13px}}

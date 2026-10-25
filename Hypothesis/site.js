@@ -10,3 +10,16 @@ document.querySelectorAll('[data-photo]').forEach(b=>b.addEventListener('click',
 lightbox?.querySelector('button').addEventListener('click',()=>lightbox.close());lightbox?.addEventListener('click',e=>{if(e.target===lightbox){const r=lightbox.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)lightbox.close()}});lightbox?.addEventListener('close',()=>lastPhoto?.focus());
 document.querySelectorAll('[data-model-mode]').forEach(b=>b.addEventListener('click',()=>{const model=b.closest('.optical-model');model.querySelectorAll('[data-model-mode]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));const mode=b.dataset.modelMode;model.querySelectorAll('[data-layer]').forEach(layer=>layer.classList.toggle('dim',mode!=='all'&&layer.dataset.layer!==mode));const label=model.querySelector('[data-model-status]');if(label)label.textContent=b.dataset.description}));
 document.querySelector('[data-print]')?.addEventListener('click',()=>window.print());
+
+// Play the original demonstration only while it is visible. Respect motion preferences.
+const film=document.querySelector('[data-camera-film]'),filmToggle=document.querySelector('[data-film-toggle]');
+if(film&&filmToggle){
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');let userPaused=false,inView=false;
+ function syncFilm(){filmToggle.textContent=film.paused?'Play animation ▶':'Pause animation Ⅱ';filmToggle.setAttribute('aria-label',film.paused?'Play camera animation':'Pause camera animation')}
+ function playFilm(){film.play().catch(()=>syncFilm())}
+ film.addEventListener('play',syncFilm);film.addEventListener('pause',syncFilm);
+ filmToggle.addEventListener('click',()=>{if(film.paused){userPaused=false;playFilm()}else{userPaused=true;film.pause()}});
+ const visibility=new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;if(inView&&!reduced.matches&&!userPaused&&!document.hidden)playFilm();else film.pause()},{threshold:.3});visibility.observe(film);
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)film.pause();else if(inView&&!userPaused&&!reduced.matches)playFilm()});
+ reduced.addEventListener('change',()=>{if(reduced.matches)film.pause();else if(inView&&!userPaused)playFilm()});syncFilm();
+}
